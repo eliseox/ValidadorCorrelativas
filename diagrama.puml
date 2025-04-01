@@ -1,0 +1,22 @@
+@startuml
+
+class Alumno {
+  - String nombre
+  - List<Materia> materiasCursadas
+  + bool puedeCursarMateria()
+}
+
+class Materia {
+  - String nombre
+  - List<Materia> materiasRequeridas
+  + bool cumpleRequisito
+}
+class Inscripcion{
+  -Alumno alumno
+  -List<Materia> propuesta
+  +bool aprobar()
+}
+
+Alumno --  Inscripcion
+Inscripcion -- Materia
+@enduml
